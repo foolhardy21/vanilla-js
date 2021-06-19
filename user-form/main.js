@@ -1,12 +1,17 @@
-const list = document.querySelector('.items')
-const btn = document.querySelector('.btn')
+const form = document.querySelector('#my-form')
+const errorMessage = document.querySelector('.msg')
+const nameInput = document.querySelector('#name')
+const emailInput = document.querySelector('#email')
+const userList = document.querySelector('#users')
 
-btn.addEventListener('click',(e) => {
+form.addEventListener('submit',onSubmit)
+
+function onSubmit(e) {
   e.preventDefault()
-  //mouseover for hovering events
-  // console.log(e.target)
-  // document.querySelector('#my-form').style.background = '#ccc'
-  // document.querySelector('body').classList.add('bg-dark')
-  // list.lastElementChild.innerHTML = '<h1>HEllo</h1>'
-
-})
+  const name = nameInput.value
+  const email = emailInput.value
+  if(!name || !email) {
+    errorMessage.classList.add('error')
+    errorMessage.textContent = 'Enter the details'
+  }
+}
