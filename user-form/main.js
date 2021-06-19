@@ -20,6 +20,14 @@ function onSubmit(e) {
       errorMessage.classList.remove('error')
       errorMessage.textContent = ''
     },2000)
+  } else {
+    const userLi = document.createElement('li')
+    userLi.appendChild(document.createTextNode(`${name} : ${email}`))
 
+    userList.appendChild(userLi)
+
+    nameInput.value=''
+    emailInput.value=''
   }
+
 }
